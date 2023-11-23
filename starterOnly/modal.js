@@ -15,6 +15,17 @@ const closeModalBtn = document.querySelector('.close')
 const submitBtn = document.querySelector('.btn-submit');
 const form = document.querySelector('form[name="reserve"]')
 const closeConfirmBtn = document.getElementById('closeConfirmBtn');
+// Form data
+const formDatas = {
+  first: '',
+  last: '',
+  email: '',
+  birthdate: '',
+  quantity: 0,
+  location: '',
+  terms: false,
+  eventNotificationCheckbox: false,
+};
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
