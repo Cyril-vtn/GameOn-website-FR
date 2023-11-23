@@ -36,6 +36,12 @@ const ErrorText = {
   location: 'Vous devez choisir une ville',
   checkbox1: 'Vous devez accepter les conditions d\'utilisation',
 };
+
+function resetInputError(formDataDiv) {
+  formDataDiv.setAttribute('data-error', '');
+  formDataDiv.setAttribute('data-error-visible', 'false');
+}
+
 function handleInputError(formDataDiv, errorMessage) {
   formDataDiv.setAttribute('data-error', errorMessage);
   formDataDiv.setAttribute('data-error-visible', 'true');
@@ -146,4 +152,32 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+// close modal form
+closeModalBtn.addEventListener('click', function () {
+  // reset error messages
+  htmlFormData.forEach((data) => {
+    resetInputError(data);
+  });
+  // reset input field values
+  form.reset();
+  document.getElementById('thankyouMessage').style.display = "none";
+  form.style.display = "block";
+  modalbg.style.display = "none";
+});
 
+
+// close confirmation modal
+closeConfirmBtn.addEventListener('click', function () {
+  // reset error messages
+  htmlFormData.forEach((data) => {
+    resetInputError(data);
+  });
+
+  // reset input field values
+  form.reset();
+
+  // hide confirmation modal
+  document.getElementById('thankyouMessage').style.display = "none";
+  form.style.display = "block";
+  modalbg.style.display = "none";
+});
