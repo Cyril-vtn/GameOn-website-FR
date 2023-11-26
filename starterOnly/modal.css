@@ -51,6 +51,7 @@ p {
 
 .main-navbar {
   position: relative;
+  left: 50px;
 }
 
 .topnav a {
@@ -605,6 +606,11 @@ footer {
   }
 }
 
+@media screen and (max-width: 1012px) {
+  .main-navbar {
+    left: initial;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .topnav .responsive {
@@ -623,6 +629,7 @@ footer {
 
   .main-navbar {
     position: absolute;
+    left: unset;
     right: 25px;
     top: 25px;
     z-index: 10;
